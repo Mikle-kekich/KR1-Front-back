@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Современный шрифт для лучшей читаемости */
+    margin: 0; /* Убираем стандартные отступы браузера */
+    padding: 0; /* Убираем стандартные внутренние отступы */
+    background: linear-gradient(135deg, #667eea 0%, #120f15 100%); /* Красивый градиентный фон всей страницы */
+    min-height: 100vh; /* Минимальная высота равна высоте окна браузера */
+}
+
+.content{
+    padding: 500px 500px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.info1 h1{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.text{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

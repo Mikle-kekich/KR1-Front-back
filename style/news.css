@@ -1,0 +1,252 @@
+/* Общие стили для всего документа */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Стили для хэдера */
+.header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* Темный градиентный фон */
+    color: white; /* Белый цвет текста */
+    text-align: center; /* Выравнивание текста по центру */
+    padding: 30px; /* Внутренние отступы со всех сторон */
+    font-size: 28px; /* Размер шрифта */
+    font-weight: 300; /* Легкое начертание шрифта */
+    letter-spacing: 2px; /* Расстояние между буквами */
+}
+
+/* Стили для меню */
+.nav {
+    background: #2c3e50; /* Темно-синий фон навигации */
+    padding: 20px 0; /* Вертикальные отступы */
+}
+
+.nav-list {
+    list-style: none; /* Убираем маркеры списка */
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    display: flex; /* Горизонтальное расположение элементов */
+    justify-content: center; /* Выравнивание по центру */
+    gap: 25px; /* Расстояние между элементами навигации */
+}
+
+.nav-item {
+    margin: 0; /* Убираем отступы у пунктов меню */
+}
+
+.nav-link {
+    color: white; /* Белый цвет текста ссылок */
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    padding: 12px 25px; /* Отступы внутри ссылок */
+    border-radius: 25px; /* Скругленные углы (капсульная форма) */
+    transition: all 0.3s ease; /* Плавные анимации при изменении */
+    font-weight: 500; /* Средняя жирность шрифта */
+}
+
+.nav-link:hover {
+    background: rgba(255,255,255,0.1); /* Полупрозрачный белый фон при наведении */
+    transform: translateY(-2px); /* Легкое поднятие элемента при наведении */
+}
+
+/* Стили для секции с новостями */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+    width: 100%;
+}
+
+/* Общие стили для всех новостных блоков */
+.new1, .news2, .news3 {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border-left: 5px solid;
+    position: relative;
+    overflow: hidden;
+}
+
+.new1:hover, .news2:hover, .news3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* Индивидуальные стили для каждой новости */
+.new1 {
+    border-left-color: #3498db;
+    background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%);
+}
+
+.news2 {
+    border-left-color: #e74c3c;
+    background: linear-gradient(135deg, #ffffff 0%, #ffebee 100%);
+}
+
+.news3 {
+    border-left-color: #2ecc71;
+    background: linear-gradient(135deg, #ffffff 0%, #e8f5e9 100%);
+}
+
+/* Заголовки новостей */
+.new1 h1, .news2 h1, .news3 h1 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid;
+    padding-bottom: 0.5rem;
+}
+
+.new1 h1 {
+    border-bottom-color: #3498db;
+}
+
+.news2 h1 {
+    border-bottom-color: #e74c3c;
+}
+
+.news3 h1 {
+    border-bottom-color: #2ecc71;
+}
+
+/* Даты */
+.new1 h3, .news2 h3, .news3 h3 {
+    color: #7f8c8d;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Текст новостей */
+.new1 p, .news2 p, .news3 p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Декоративные элементы */
+.new1::before, .news2::before, .news3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, currentColor, transparent);
+    opacity: 0.3;
+}
+
+/* Стили для футера */
+#footer {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: auto;
+    font-size: 1.2rem;
+    border-top: 3px solid #e74c3c;
+}
+
+/* Анимация появления новостей */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.new1 {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.news2 {
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.news3 {
+    animation: fadeInUp 0.6s ease-out 0.4s both;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .header {
+        font-size: 2rem;
+        padding: 1.5rem 0;
+    }
+    
+    .menu ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    
+    .menu a {
+        padding: 0.5rem 1rem;
+        width: 200px;
+        text-align: center;
+    }
+    
+    .content {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
+    
+    .new1, .news2, .news3 {
+        padding: 1.5rem;
+    }
+    
+    .new1 h1, .news2 h1, .news3 h1 {
+        font-size: 1.5rem;
+    }
+    
+    .new1 p, .news2 p, .news3 p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 1.5rem;
+        padding: 1rem 0;
+    }
+    
+    .menu {
+        padding: 0.5rem 0;
+    }
+    
+    .content {
+        padding: 1rem 0.5rem;
+    }
+    
+    .new1, .news2, .news3 {
+        padding: 1rem;
+    }
+    
+    .new1 h1, .news2 h1, .news3 h1 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Дополнительные декоративные элементы */
