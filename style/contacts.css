@@ -1,267 +1,208 @@
-/* Общие стили для всего документа */
-* {
-    margin: 0;
+/* Стили для модального окна */
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.3s ease;
+}
+
+dialog {
+    border: none;
+    border-radius: 12px;
     padding: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease;
+    max-width: 500px;
+    width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px 12px 0 0;
+    margin: 0;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.modal-content {
+    padding: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-    min-height: 100vh;
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.modal-actions {
     display: flex;
-    flex-direction: column;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
 }
 
-/* Стили для хэдера */
-.header {
-    background: linear-gradient(135deg, #42e10d, #16181a);
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-/* Стили для меню */
-.menu {
-    background-color: #34495e;
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.menu ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.menu a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
     transition: all 0.3s ease;
-    font-weight: 500;
+    font-weight: 600;
 }
 
-.menu a:hover {
-    background-color: #3498db;
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
-/* Стили для основного контента */
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    padding: 3rem 2rem;
+.btn-secondary {
+    background: #f8f9fa;
+    color: #2c3e50;
+    border: 2px solid #e9ecef;
+}
+
+.btn-secondary:hover {
+    background: #e9ecef;
+}
+
+.required {
+    color: #e74c3c;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    dialog {
+        margin: 1rem;
+        width: calc(100vw - 2rem);
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Стили для контактной страницы */
+.contacts-container {
     max-width: 800px;
     margin: 0 auto;
-    flex: 1;
+    padding: 2rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
+.contact-info {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #667eea;
+}
+
+.contact-info h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.contact-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-/* Стили для блока с информацией */
-.info {
-    background: white;
-    border-radius: 15px;
-    padding: 3rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border-left: 5px solid #e74c3c;
-    transition: all 0.3s ease;
-}
-
-.info:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-}
-
-.info h1 {
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
+.contact-item h3 {
     color: #2c3e50;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.info h1:first-child::before {
-    content: '📧';
-    font-size: 1.2rem;
-}
-
-.info h1:last-child::before {
-    content: '📍';
-    font-size: 1.2rem;
-}
-
-.info h1:last-child {
-    margin-bottom: 0;
-}
-
-/* Стили для кнопки */
-button {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
+.contact-button {
+    display: block;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
-    padding: 1.2rem 3rem;
-    font-size: 1.3rem;
-    font-weight: bold;
-    border-radius: 50px;
+    border-radius: 6px;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
-    position: relative;
-    overflow: hidden;
+    font-weight: 600;
 }
 
-button::before {
-    content: '📞';
-    margin-right: 0.5rem;
-}
-
-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.6);
-    background: linear-gradient(135deg, #c0392b, #e74c3c);
-}
-
-button:active {
-    transform: translateY(-1px);
-    box-shadow: 0 3px 10px rgba(231, 76, 60, 0.4);
-}
-
-/* Анимация пульсации для кнопки */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-button {
-    animation: pulse 2s infinite;
-}
-
-/* Стили для футера */
-#footer {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: auto;
-    font-size: 1.2rem;
-    border-top: 3px solid #e74c3c;
-}
-
-/* Декоративные элементы */
-.content::before {
-    content: '👥';
-    font-size: 4rem;
-    opacity: 0.1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    .header {
-        font-size: 2rem;
-        padding: 1.5rem 0;
-    }
-    
-    .menu ul {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: center;
-    }
-    
-    .menu a {
-        padding: 0.5rem 1rem;
-        width: 200px;
-        text-align: center;
-    }
-    
-    .content {
-        padding: 2rem 1rem;
-        gap: 2rem;
-    }
-    
-    .info {
-        padding: 2rem;
-    }
-    
-    .info h1 {
-        font-size: 1.2rem;
-        flex-direction: column;
-        gap: 0.3rem;
-    }
-    
-    button {
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .header {
-        font-size: 1.5rem;
-        padding: 1rem 0;
-    }
-    
-    .menu {
-        padding: 0.5rem 0;
-    }
-    
-    .content {
-        padding: 1.5rem 0.5rem;
-    }
-    
-    .info {
-        padding: 1.5rem;
-    }
-    
-    .info h1 {
-        font-size: 1.1rem;
-    }
-    
-    button {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-    }
-}
-
-/* Дополнительные стили для улучшения внешнего вида */
-.info {
-    position: relative;
-}
-
-.info::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 10px;
-    background: rgba(0,0,0,0.1);
-    border-radius: 50%;
-    filter: blur(5px);
+.contact-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
