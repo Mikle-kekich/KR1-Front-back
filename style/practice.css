@@ -12,7 +12,8 @@ body {
 }
 
 .content{
-    padding: 500px 500px;
+    
+    padding: 50px 50px;
     background: white;
     display: flex;
     justify-content: center;
@@ -35,3 +36,16 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+@media(max-width:600px ){
+    .img_practic{
+        width: 350px;
+    }
+}
+
+@media(max-width:400px ){
+    .img_practic{
+        width: 300px;
+    }
+}
+
