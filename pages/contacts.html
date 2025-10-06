@@ -1,57 +1,73 @@
 <!DOCTYPE html>
-<html lamg="ru">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контрольная работа 1</title>
-    <link rel="stylesheet" href="../style/contacts.css">
+    <title>Контакты - Портфолио</title>
     <link rel="stylesheet" href="../style/style.css">
-   
 </head>
 
 <body>
-    <div class="page-container">
+    <!-- Основной контейнер -->
+    <div class="page">
+
+        <!-- Шапка -->
         <header class="header">
-            <h1>Контакты</h1>
+            <h1 class="header__title">Контакты</h1>
         </header>
 
+        <!-- Навигация -->
         <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li> 
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="../pages/news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="../pages/practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="../pages/goods.html">Товары</a>
+                </li>
+                <li class="nav__item nav__item--active">
+                    <a class="nav__link" href="../pages/contacts.html">Контакты</a>
+                </li>
             </ul>
         </nav>
 
-        <main class="content">
-            <section class="contacts-container">
-                <h2 class="section-title">Наши контакты</h2>
+        <!-- Основной контент -->
+        <main class="main">
+            <!-- Контакты -->
+            <section class="contacts">
+                <h2 class="contacts__title">Наши контакты</h2>
                 
-                <article class="contact-info">
-                    <h3>Электронная почта</h3>
-                    <p>Адрес электронной почты: misha@mirea.ru</p>
-                </article>
-                
-                <article class="contact-info">
-                    <h3>Физический адрес</h3>
-                    <p>Адрес: г. Москва, ул. Пушкина, д. Колотушкина</p>
-                </article>
-
-                <div class="contact-grid">
+                <div class="contacts__list">
                     <div class="contact-item">
-                        <h3>Телефон</h3>
-                        <p>+7 (495) 123-45-67</p>
+                        <h3 class="contact-item__title">Электронная почта</h3>
+                        <p class="contact-item__value">misha@mirea.ru</p>
                     </div>
+                    
                     <div class="contact-item">
-                        <h3>Время работы</h3>
-                        <p>Пн-Пт: 9:00-18:00</p>
+                        <h3 class="contact-item__title">Физический адрес</h3>
+                        <p class="contact-item__value">г. Москва, ул. Пушкина, д. Колотушкина</p>
                     </div>
+                    
                     <div class="contact-item">
-                        <h3>Социальные сети</h3>
-                        <p>VK, Telegram, WhatsApp</p>
+                        <h3 class="contact-item__title">Телефон</h3>
+                        <p class="contact-item__value">+7 (495) 123-45-67</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3 class="contact-item__title">Время работы</h3>
+                        <p class="contact-item__value">Пн-Пт: 9:00-18:00</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3 class="contact-item__title">Социальные сети</h3>
+                        <p class="contact-item__value">VK, Telegram, WhatsApp</p>
                     </div>
                 </div>
                 
@@ -59,16 +75,17 @@
             </section>
         </main>
 
+        <!-- Подвал -->
         <footer class="footer">
-            <p>© 2024 Все права защищены. Контактная информация</p>
+            <p class="footer__text">&copy; 2024 Мой сайт</p>
         </footer>
-
+        
         <!-- Модальное окно для формы обратной связи -->
         <dialog id="contactModal">
             <div class="modal-header">
                 <h2>Форма обратной связи</h2>
             </div>
-            
+
             <div class="modal-content">
                 <form id="feedbackForm" method="dialog">
                     <div class="form-group">
@@ -101,20 +118,20 @@
 
                     <div class="form-group">
                         <label for="message">Текст обращения <span class="required">*</span></label>
-                        <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                        <textarea id="message" name="message" required
+                            placeholder="Опишите вашу проблему или вопрос..."></textarea>
                     </div>
 
                     <div class="modal-actions">
-                        <button type="submit" class="btn btn-secondary">Отмена</button>
+                        <button type="button" class="btn btn-secondary" onclick="contactModal.close()">Отмена</button>
                         <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
                     </div>
                 </form>
             </div>
         </dialog>
-
-        <script src="../js/contacts.js"></script>
     </div>
+
+    <script src="../js/contacts.js"></script>
 </body>
+
 </html>
-
-
