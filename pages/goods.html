@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контрольная работа 1</title>
-    <link rel="stylesheet" href="../style/goods.css">
+    
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/goods.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
 </head>
 
-<body>
+<body class="text-bg-dark p-3">
     <header class="header">Товары</header>
     <div class="page">
         <!-- Навигация -->
@@ -35,26 +38,38 @@
         </nav>
 
         <section class="content">
-            <div class="card">
-                <img src="../images/card1.webp" alt="">
-                <h1>Персик</h1>
-                <p>Цена: 500р</p>
+            <div class="card" style="width: 18rem;">
+                <img src="../images/card1.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Персик</h5>
+                    <p class="card-text">Крутой персик(не спрашивайте почему тут скала)</p>
+                    <a href="#" class="btn btn-primary">Цена: 500р</a>
+                </div>
             </div>
-            <div class="card">
-                <img src="../images/card2.webp" alt="">
-                <h1>Игровой ПК</h1>
-                <p>Цена: 5000р</p>
+            <div class="card" style="width: 18rem;">
+                <img src="../images/card2.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Игровой ПК</h5>
+                    <p class="card-text">Супер мега игровой компьтер для того чтобы быть самым крутым в школе и шпилить
+                        в дотку</p>
+                    <a href="#" class="btn btn-primary">Цена: 50000р</a>
+                </div>
             </div>
-            <div class="card">
-                <img src="../images/Card3.webp" alt="">
-                <h1>Доширак</h1>
-                <p>Цена: 85р</p>
+            <div class="card" style="width: 18rem;">
+                <img src="../images/Card3.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Доширак</h5>
+                    <p class="card-text">Класика студенческого вечера.
+                    </p>
+                    <a href="#" class="btn btn-primary">Цена: 85р</a>
+                </div>
             </div>
         </section>
         <footer class="footer">
             <p class="footer__text">&copy; 2024 Мой сайт</p>
         </footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
 </body>
 
