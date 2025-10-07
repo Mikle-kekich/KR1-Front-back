@@ -165,9 +165,14 @@ body {
     border-top: 3px solid #e74c3c;
 }
 
+
+.card{
+    transition: box-shadow ease 0.3s;
+}
 .card:hover,
 .card:focus{
-    
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+
 }
 
 
