@@ -165,6 +165,13 @@ body {
     border-top: 3px solid #e74c3c;
 }
 
+.card:hover,
+.card:focus{
+    
+}
+
+
+
 /* Анимация появления новостей */
 @keyframes fadeInUp {
     from {
